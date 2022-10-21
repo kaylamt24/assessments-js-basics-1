@@ -1,3 +1,5 @@
+// I pushed to github but it did not go through
+
 //////////////////PROBLEM 1////////////////////
 /* Create a copy of the faveColors array called 'colorCopy' using the slice method. */
 
@@ -6,16 +8,24 @@ const faveColors = ['red', 'green', 'black']
 
 console.log(faveColors.slice())
 
+
+// I did not read the entire question fully and rushed into the answer. I now understand what I did wrong. I did not reassign it to a new variable. Correct is below
+
+let colorCopy = faveColors.slice()
+console.log(colorCopy)
+
+
+
 //CODE HERE
 
 //////////////////PROBLEM 2////////////////////
 /* Add a fourth color to the end of the 'colorCopy' array using the push method. */
 
 
-faveColors.push('pink')
-console.log(faveColors)
+colorCopy.push('pink')
+console.log(colorCopy)
 
-
+//The execution is correct however I used the wrong variable because I did not do the first answer correct. 
 
 
 
@@ -48,8 +58,8 @@ const bigOrSmallArray = [1, 99, 42, 69, 102, -10, 159, 352]
 answers = []
 
 for(let i = 0; i = bigOrSmallArray.length; i++){
-  if(bigOrSmallArray[i] > 100){
-  answers.push('big')
+  if(bigOrSmallArray[i] > 100){ //right
+  answers.push('big') //right
 } else { 
   (bigOrSmallArray[i] <= 100){ 
   answers.push('small')
@@ -57,6 +67,22 @@ for(let i = 0; i = bigOrSmallArray.length; i++){
 }
 }
 console.log(answers)
+
+
+
+
+// let array = [28, 43, -12, 30, 4, 0, -36]
+
+// let smallest = array[0]
+// let largest = array[0]
+
+// for (let i = 0; i < bigOrSmallArray; i++) {
+//   if (smallest > bigOrSmallArray[i]) {
+//     smallest <= bigOrSmallArray[i]
+//   } else if (largest < bigOrSmallArray[i]) {
+//     largest = array[i]
+//   }
+// }
 
 // for(let i = 1; i = bigOrSmallArray.length; i++){
 //   if(bigOrSmallArray[i] > 100){

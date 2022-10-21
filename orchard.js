@@ -38,13 +38,16 @@ const pinkPrice = .55
 let = totalAcres = []
 
 const totalPicked = input => {
-    let = totalAcres = {}
+    //let = totalAcres = {}
     for (i = 0; i < input.length; i++){
         let fuji = input[i].fujiAcres;
         let gala = input[i].galaAcres;
         let pink = input[i].pinkAcres;
     }
 }
+console.log(totalAcres)
+
+
 
 // PROBLEM 1
 
