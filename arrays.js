@@ -25,7 +25,7 @@ console.log(colorCopy)
 colorCopy.push('pink')
 console.log(colorCopy)
 
-//The execution is correct however I used the wrong variable because I did not do the first answer correct. 
+//The execution is correct however I used the wrong variable because I did not do the first answer correct. Only change was faveColors -> colorCopy 
 
 
 
@@ -57,13 +57,12 @@ const bigOrSmallArray = [1, 99, 42, 69, 102, -10, 159, 352]
 
 answers = []
 
-for(let i = 0; i = bigOrSmallArray.length; i++){
+for(let i = 0; i < bigOrSmallArray.length; i++){
   if(bigOrSmallArray[i] > 100){ //right
   answers.push('big') //right
 } else { 
-  (bigOrSmallArray[i] <= 100){ 
+  (bigOrSmallArray[i] <= 100) 
   answers.push('small')
-}
 }
 }
 console.log(answers)

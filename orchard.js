@@ -27,28 +27,6 @@
     in cents. 
 */
 
-const fujiAcres = [2, 3, 3, 2, 2, 2, 1]
-const galaAcres = [5, 2, 4, 3, 6, 2, 4]
-const pinkAcres = [1, 5, 4, 2, 1, 5, 4]
-
-const fujiPrice = .89 
-const galaPrice = .64
-const pinkPrice = .55
-
-let = totalAcres = []
-
-const totalPicked = input => {
-    //let = totalAcres = {}
-    for (i = 0; i < input.length; i++){
-        let fuji = input[i].fujiAcres;
-        let gala = input[i].galaAcres;
-        let pink = input[i].pinkAcres;
-    }
-}
-console.log(totalAcres)
-
-
-
 // PROBLEM 1
 
 /*
@@ -65,7 +43,58 @@ console.log(totalAcres)
 
 
 
+// const totalPicked = input => {
+//
+//     for (i = 0; i < input.length; i++){
+//         let fuji = input[i].fujiAcres;
+//         let gala = input[i].galaAcres;
+//         let pink = input[i].pinkAcres;
+//     }
+// }
+// console.log(totalAcres) // My unfinished code above. I had used this before when looping through an array and pulling out information into a permanent storage location. I thought it was multiple arrays and pulling out their values however I now realize I had looped through 1 array with multiple objects. I was going to see if I could make it work but dot notation only works when you are accessing properties of an object?? :( :( But, it was a good idea and will hopefully be useful in the upcoming weeks. I am going to keep the code that I wrote above instead of getting rid of it. 
 
+//
+const fujiAcres = [2, 3, 3, 2, 2, 2, 1]
+const galaAcres = [5, 2, 4, 3, 6, 2, 4]
+const pinkAcres = [1, 5, 4, 2, 1, 5, 4]
+
+
+const fujiPrice = .89 
+const galaPrice = .64
+const pinkPrice = .55
+
+let = totalAcres = 0
+
+for(let i = 0; i < fujiAcres.length; i++){
+    totalAcres += fujiAcres[i]
+}
+
+for(let i = 0; i < galaAcres.length; i++){
+    totalAcres += galaAcres[i]
+}
+
+for(let i = 0; i < pinkAcres.length; i++){
+    totalAcres += pinkAcres[i]
+}
+
+console.log(totalAcres)
+
+//I did not realize that you could do separate for loops using the same index. When I wrote it out the first time, I was using nested for loops and used J and K. It makes total sense because I am pulling the index of each array and not one away with multiple categories basically. I hope that makes sense. I am picking up what you are putting down. 
+
+// for (let i = 0; i < 7; i++){
+//     totalAcres += fujiAcres[i]
+//     totalAcres += galaAcres[i]
+//     totalAcres += pinkAcres[i]
+// }
+// console.log(totalAcres)
+
+
+let averageDailyAcres = totalAcres / 7
+
+console.log(averageDailyAcres)
+
+
+// we were able to use the information provided above and divide it by 7. There was no need to do her per array as they were trying to figure out the average number of acres in TOTAL. The averageDailyAcres equals totalAcres divided by 7 because there are 7 days in a week. Makes sense.
 
 // PROBLEM 2
 
@@ -117,6 +146,15 @@ console.log(totalAcres)
 let acresLeft = 174 
 let days = 0
 
+while(acresLeft > 0){
+    days++
+    acresLeft -= averageDailyAcres
+}
+
+console.log(days)
+
+
+
 // CODE HERE
 
 
@@ -147,10 +185,28 @@ let days = 0
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
+for (let i = 0; i < fujiAcres.length; i++){
+    let tonConversion = fujiAcres[i] * 6.5
+    fujiTons.push(tonConversion)
+}
+
+for (let i = 0; i < galaAcres.length; i++){
+    let tonConversion = galaAcres[i] * 6.5
+    galaTons.push(tonConversion)
+}
+
+for (let i = 0; i < pinkAcres.length; i++){
+    let tonConversion = pinkAcres[i] * 6.5
+    pinkTons.push(tonConversion)
+}
+
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
 
 
@@ -174,10 +230,26 @@ let days = 0
 
 // CODE HERE 
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
+
+for (let i = 0; i < fujiTons.length; i++){
+    fujiPounds += fujiTons[i] * 2000
+}
+
+for (let i = 0; i < galaTons.length; i++){
+    galaPounds += galaTons[i] * 2000
+}
+
+for (let i = 0; i < pinkTons.length; i++){
+    pinkPounds += pinkTons[i] * 2000
+}
+
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
 
 
 
@@ -201,13 +273,15 @@ let days = 0
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
 
-
-
+console.log(fujiProfit)
+console.log(galaProfit)
+console.log(pinkProfit)
 
 
 // PROBLEM 7
@@ -221,3 +295,7 @@ let days = 0
 */
 
 // CODE HERE
+
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+
+console.log(totalProfit)
